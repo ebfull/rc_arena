@@ -1,0 +1,13 @@
+[package]
+name = "rc_arena"
+version = "0.1.0"
+authors = ["Sean Bowe <ewillbefull@gmail.com>"]
+keywords = ["rc", "arena", "typed"]
+readme = "README.md"
+homepage = "https://github.com/ebfull/rc_arena"
+repository = "https://github.com/ebfull/rc_arena"
+documentation = "https://ebfull.github.io/rc_arena/"
+license = "MIT"
+
+[lib]
+name = "rc_arena"
