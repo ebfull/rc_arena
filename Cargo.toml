@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Sean Bowe <ewillbefull@gmail.com>"]
 keywords = ["rc", "arena", "typed"]
 readme = "README.md"
+description = "An arena which yields reference counted pointers to the underlying objects"
 homepage = "https://github.com/ebfull/rc_arena"
 repository = "https://github.com/ebfull/rc_arena"
 documentation = "https://ebfull.github.io/rc_arena/"
