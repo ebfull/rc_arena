@@ -21,6 +21,8 @@
 
 use std::cell::RefCell;
 use std::ops::Deref;
+use std::hash::Hash;
+use std::hash::Hasher;
 
 /// A reference counted pointer to an object that lives in an arena.
 pub struct Rc<T> {
@@ -59,6 +61,20 @@ impl<T> std::fmt::Display for Rc<T> where T: std::fmt::Display {
 impl<T> std::fmt::Debug for Rc<T> where T: std::fmt::Debug {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> Result<(), std::fmt::Error> {
         self.deref().fmt(f)
+    }
+}
+
+impl<T: PartialEq> PartialEq for Rc<T> {
+    fn eq(&self, other: &Rc<T>) -> bool {
+        PartialEq::eq(self.deref(), other.deref())
+    }
+}
+
+impl<T: PartialEq> Eq for Rc<T> {}
+
+impl<T: Hash> Hash for Rc<T> {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        Hash::hash(self.deref(), state)
     }
 }
 
